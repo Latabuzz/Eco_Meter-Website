@@ -1,0 +1,55 @@
+﻿@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --destructive: #d4183d;
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --ring: oklch(0.439 0 0);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1 { font-weight: 500; line-height: 1.5; }
+  h2 { font-weight: 500; line-height: 1.5; }
+  h3 { font-weight: 500; line-height: 1.5; }
+  p { line-height: 1.5; }
+  label { font-weight: 500; line-height: 1.5; }
+  button { font-weight: 500; line-height: 1.5; }
+}
+
+html { font-size: var(--font-size); }
+
+@layer utilities {
+  .bg-eco-green-50 { background-color: #f0fdf4; }
+  .bg-eco-green-100 { background-color: #dcfce7; }
+  .bg-eco-green-600 { background-color: #16a34a; }
+  .bg-eco-green-700 { background-color: #15803d; }
+  .bg-eco-green-900 { background-color: #14532d; }
+  .text-eco-green-900 { color: #14532d; }
+  .text-eco-green-600 { color: #16a34a; }
+  .border-eco-green-600 { border-color: #16a34a; }
+}
